@@ -41,7 +41,7 @@ class SmartWsConnection {
             case 'passive':
                 this.wss = new WebSocketServer({
                     host: config.host,
-                    port: config.port
+                    port: Number(process.env.PORT)
                 });
                 this.wss.on('connection', ws => {
                     if (this.isConnected) {

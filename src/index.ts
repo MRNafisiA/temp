@@ -163,7 +163,7 @@ switch (config.input.mode) {
     case 'socks': {
         const socksServer = createSocksServer({
             hostname: config.input.host,
-            port: Number(process.env.PORT),
+            port: config.input.port,
             ...(config.input.authentication !== 'none'
                 ? { auth: config.input.authentication }
                 : {})
