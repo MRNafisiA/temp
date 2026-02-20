@@ -1,0 +1,31 @@
+{
+    "name": "nProxy",
+    "version": "0.0.1",
+    "description": "nProxy",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NarmCo/nProxy.git"
+    },
+    "scripts": {
+        "run:dev": "bun --watch run ./src/index.ts",
+        "build": "tsc --build tsconfig.prd.json && webpack -c webpack.config.js"
+    },
+    "dependencies": {
+        "ws": "8.18.0",
+        "@pondwader/socks5-server": "1.0.10"
+    },
+    "devDependencies": {
+        "@types/node": "^22.15.18",
+        "@types/ws": "^8.5.11",
+        "typescript": "5.9.3",
+        "prettier": "^3.3.3",
+        "eslint": "^9.39.2",
+        "eslint-config-prettier": "^9.1.0",
+        "@typescript-eslint/eslint-plugin": "^8.54.0",
+        "@typescript-eslint/parser": "^8.54.0",
+        "webpack": "^5.99.6",
+        "webpack-cli": "^5.1.4",
+        "@babel/preset-env": "^7.26.0"
+    },
+    "private": true
+}

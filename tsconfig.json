@@ -1,0 +1,44 @@
+{
+    "include": ["src"],
+    "exclude": ["node_modules", "dist", "build"],
+    "compilerOptions": {
+        /* Type Checking */
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+
+        /* Modules */
+        "module": "node16",
+        "moduleResolution": "node16",
+        "resolveJsonModule": true,
+
+        /* Emit */
+
+        /* JavaScript Support */
+
+        /* Editor Support */
+        "disableSizeLimit": true,
+
+        /* Interop Constraints */
+        "esModuleInterop": true,
+        "isolatedModules": true,
+
+        /* Backwards Compatibility */
+
+        /* Language and Environment */
+        "lib": ["ESNext"],
+        "target": "ESNext",
+
+        /* Compiler Diagnostics */
+
+        /* Projects */
+
+        /* Output Formatting */
+        "noErrorTruncation": true,
+        "pretty": true
+
+        /* Completeness */
+
+        /* Watch Options */
+    }
+}
