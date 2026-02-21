@@ -1,5 +1,6 @@
-import { WebSocketServer, WebSocket } from 'ws';
+import http from 'http';
 import { WsConnection } from './parseConfig';
+import { WebSocketServer, WebSocket } from 'ws';
 import { Socks5Server } from '@pondwader/socks5-server';
 
 type DateAndAuthentication =
@@ -39,10 +40,11 @@ class SmartWsConnection {
                 this.reNewWs(config.target);
                 break;
             case 'passive':
-                this.wss = new WebSocketServer({
-                    host: config.host,
-                    port: Number(process.env.PORT)
+                const server = http.createServer((_, res) => {
+                    res.writeHead(200, { 'Content-Type': 'text/plain' });
+                    res.end('WebSocket server is running');
                 });
+                this.wss = new WebSocket.Server({ server });
                 this.wss.on('connection', ws => {
                     if (this.isConnected) {
                         ws.close();
@@ -51,6 +53,7 @@ class SmartWsConnection {
                     this.ws = ws;
                     this.prepareWs();
                 });
+                server.listen(Number(process.env.PORT), config.host);
                 break;
         }
     }
@@ -148,4 +151,3 @@ class SmartWsConnection {
 }
 
 export { type Data, SmartWsConnection };
-

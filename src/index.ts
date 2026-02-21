@@ -210,4 +210,3 @@ switch (config.output.mode) {
         });
         break;
 }
-

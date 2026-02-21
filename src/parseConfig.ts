@@ -150,4 +150,3 @@ export {
     parseOutput,
     parseConfig
 };
-
